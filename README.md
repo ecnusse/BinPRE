@@ -37,21 +37,19 @@ Ubuntu 20.04
 
 python3.8
 
-#### Step 1 install **pin-3.28**：
+#### install **BinPRE & requirements & pin-3.28,**：
 
 ```
-./install_pin.sh
-
-```
-#### Step 2 install **BinPRE**:
-```
-cd ../pin-3.28-98749-g6643ecee5-gcc-linux/source/tools/
+cd ~
 git clone https://github.com/BinPRE/BinPRE
 cd BinPRE
-pip3 install -r requirements.txt
+install_preliminary.sh
+install_pin.sh
+cd ..
 ```
 
-#### Step 3 download and install the object to be tested:
+
+#### (optional) download and install the object to be tested:
 ```
 cd BinPRE/src
 # install the server to be tested
@@ -70,8 +68,7 @@ You can quickly try BinPRE with following steps:
 step 1: instrument and start the server
 ```
 # ==== Execution Monitor
-cd ~/pin-3.28-98749-g6643ecee5-gcc-linux/source/tools/BinPRE/src
-./run compile taint
+cd ./BinPRE/src
 ./run run taint ./freemodbus/tcpmodbus
 #type 'e' to enable the protocol stack
 
@@ -80,7 +77,7 @@ step2a <u>(BinPRE)</u>: Simulate client sending messages and Reverse Engineering
 ```
 # ==== Field Inference(Format & Semantic) & Evaluation
 
-cd ~/pin-3.28-98749-g6643ecee5-gcc-linux/source/tools/BinPRE/Analyzer
+cd ./BinPRE/Analyzer
 python3 fsend_split.py modbus 0 0 oa xx big 0 
 
 <Please enter the value of threadId: 1> #For this example is '1'
@@ -91,12 +88,15 @@ step2b <u>(Baselines)</u>: Simulate client sending messages and Reverse Engineer
 ```
 # ==== Field Inference(Format & Semantic) & Evaluation
 
-cd ~/pin-3.28-98749-g6643ecee5-gcc-linux/source/tools/BinPRE/Analyzer
+cd ./BinPRE/Analyzer
 python3 fsend_split.py modbus 0 0 bo xx big 0 
 
 <Please enter the value of threadId: 1> #For this example is '1'
 
 ```
+
+
+
 
 
 
