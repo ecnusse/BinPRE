@@ -13,7 +13,7 @@ BinPRE
        |--- Speculator.py:                    The main module of our Semanic Inference
        |--- Corrector.py:                     The main module of our Semantic Refinement
        |
-       |--- Baseline:  
+       |--- Baseline:                   The re-implementations of the other three ExeT-based baselines.
           |
           |--- Polyglot     The modules of Polyglot
           |--- AutoFormat   The modules of AutoFormat
@@ -21,7 +21,7 @@ BinPRE
 
    |--- src:                            The Taint Tracker for monitoring server execution.
    |
-   |--- BinPRE_Res:                     The the other three ExeT-based baselines.
+   |--- BinPRE_Res:                     The folder of outputs.
        |
        |--- {protocol}_{msgnum} 
           |
@@ -94,11 +94,3 @@ python3 fsend_split.py modbus 0 0 bo xx big 0
 <Please enter the value of threadId: 1> #For this example is '1'
 
 ```
-
-
-
-
-
-
-
-
