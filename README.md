@@ -40,16 +40,12 @@ python3.8
 #### Step 1 install **pin-3.28**：
 
 ```
-wget https://software.intel.com/sites/landingpage/pintool/downloads/pin-3.28-98749-g6643ecee5-gcc-linux.tar.gz
-tar -xzf pin-3.28-98749-g6643ecee5-gcc-linux.tar.gz
-cd pin-3.28-98749-g6643ecee5-gcc-linux
-sudo ln -s ${PWD}/pin /usr/local/bin
-echo export PIN_ROOT=${PWD} >> ~/.bashrc
-source ~/.bashrc
-cd ../pin-3.28-98749-g6643ecee5-gcc-linux/source/tools/
+./install_pin.sh
+
 ```
 #### Step 2 install **BinPRE**:
 ```
+cd ../pin-3.28-98749-g6643ecee5-gcc-linux/source/tools/
 git clone https://github.com/BinPRE/BinPRE
 cd BinPRE
 pip3 install -r requirements.txt
@@ -67,7 +63,7 @@ cd BinPRE/src
 
 The binary file of freemodbus is stored in ```./BinPRE/src/freemodbus/tcpmodbus``` 
 
-**Note that**, by replacing packet captures (pcaps) and protocol implementations, you can easily start analyzing other protocols!
+**Note that**, by replacing packet captures (pcaps) and protocol implementations(binary files), you can easily start analyzing other protocols!
 
 You can quickly try BinPRE with following steps:
 

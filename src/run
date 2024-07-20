@@ -1,0 +1,16 @@
+#!/bin/bash
+mkdir -p obj-intel64
+if [ "$1" = "compile" ];then
+    touch $2.cpp
+    make obj-intel64/$2.so
+fi
+
+if [ "$1" = "run" ];then
+    LD_PRELOAD=./libx.so pin -t obj-intel64/$2.so -- $3 ${@:4}
+fi
+
+if [ "$1" = "all" ];then
+    touch $2.cpp
+    make obj-intel64/$2.so
+    LD_PRELOAD=./libx.so pin -t obj-intel64/$2.so -- $3 ${@:4}
+fi
