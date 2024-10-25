@@ -53,6 +53,8 @@ As some servers require a carefully configured environment, we recommend that yo
 
 ```
 docker pull homebrew/ubuntu20.04
+git clone https://github.com/ecnusse/BinPRE.git
+cd BinPRE
 docker build . -t binpre_ae
 docker run -it --privileged binpre_ae /bin/bash
 ```
@@ -66,7 +68,6 @@ By default, the ```BinPRE/src``` directory contains a binary file that implement
 cd ~
 git clone https://github.com/BinPRE/BinPRE
 cd BinPRE
-git checkout Artifact_Evaluation
 ./install_preliminary.sh
 ./install_pin.sh
 cd ..
